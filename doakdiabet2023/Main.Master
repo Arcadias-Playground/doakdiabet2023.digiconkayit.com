@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="doakdiabet2023.Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>5. DOĞU AKDENİZ DİYABET AKADEMİSİ KAYIT FORMU </title>
+
+    <link rel="stylesheet" type="text/css" href="<%= ResolveClientUrl("~/css/bootstrap.min.css") %>" />
+    <link rel="stylesheet" type="text/css" href="<%= ResolveClientUrl("~/css/KuTechCSS.css") %>" />
+
+    <script type="text/javascript" src="<%=ResolveClientUrl("~/js/jquery-3.7.1.min.js") %>"></script>
+    <script type="text/javascript" src="<%=ResolveClientUrl("~/js/bootstrap.min.js") %>"></script>
+    <script type="text/javascript" src="<%=ResolveClientUrl("~/js/jquery.inputmask.min.js") %>"></script>
+    <script type="text/javascript" src="<%=ResolveClientUrl("~/js/KuTechJS.js") %>"></script>
+
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <asp:Image ID="ImgBanner" runat="server" ImageUrl="~/img/banner.png" CssClass="w-100" />
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+    <footer id="footer">
+        <div class="container d-md-flex py-4">
+            <div class="me-md-auto text-center text-md-start">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>5. DOĞU AKDENİZ DİYABET AKADEMİSİ 2023.</span><br>
+                    </strong>. Tüm Hakları Saklıdır.
+                </div>
+            </div>
+            <div class="social-links text-center text-md-right pt-3 pt-md-0">
+                <a href="https://arcadiastech.com/">
+                    <asp:Image ID="ImgFooter" runat="server" ImageUrl="~/img/arkadyas.png" />
+                </a>
+
+            </div>
+        </div>
+    </footer>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <div id="Uyari" runat="server" class="modal fade" role="dialog" data-bs-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" id="UyariHead">
+                    <h4 class="title" id="UyariBaslik"></h4>
+                </div>
+                <div class="modal-body" id="UyariIcerik"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger waves-effect" data-bs-dismiss="modal" id="UyariKapatButon"><i class="fa fa-times"></i>&nbsp;Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
