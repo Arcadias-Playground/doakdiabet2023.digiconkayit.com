@@ -93,7 +93,7 @@ namespace ModelBase
         [Required(ErrorMessage = "BosUyari")]
         [MaxLength(255, ErrorMessage = "UzunlukUyari")]
         [Column("KvkkOnay", Order = 11)]
-        public virtual string KvkkOnay { get; set; }
+        public virtual bool KvkkOnay { get; set; }
 
 
         [Required(ErrorMessage = "BosUyari")]

@@ -194,7 +194,7 @@ namespace VeritabaniIslemMerkeziBase
                         Sehir = SModel.Reader.GetString(10),
                         Ilce = SModel.Reader.GetString(11),
                         DogumTarihi = SModel.Reader.GetString(12),
-                        KvkkOnay = SModel.Reader.GetString(13),
+                        KvkkOnay = SModel.Reader.GetBoolean(13),
 
                         GuncellenmeTarihi = SModel.Reader.GetDateTime(14),
                         EklenmeTarihi = SModel.Reader.GetDateTime(15),
@@ -256,7 +256,7 @@ namespace VeritabaniIslemMerkeziBase
                         Sehir = Reader.GetString(Baslangic + 10),
                         Ilce = Reader.GetString(Baslangic + 11),
                         DogumTarihi = Reader.GetString(Baslangic + 12),
-                        KvkkOnay = Reader.GetString(Baslangic + 13),
+                        KvkkOnay = Reader.GetBoolean(Baslangic + 13),
 
                         GuncellenmeTarihi = Reader.GetDateTime(Baslangic + 14),
                         EklenmeTarihi = Reader.GetDateTime(Baslangic + 15),

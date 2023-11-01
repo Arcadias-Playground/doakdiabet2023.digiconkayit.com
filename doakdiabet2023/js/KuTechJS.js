@@ -28,3 +28,10 @@ const UyariBilgilendirme = (Baslik, Icerik, Sonuc) => {
         $('#Uyari').modal('show');
     });
 }
+
+const BasariliBilgilendirme = (AdSoyad) => {
+    $(document).ready(function () {
+        $('.cupon-pop').html(AdSoyad);
+        $('#Succesful').modal('show');
+    });
+}

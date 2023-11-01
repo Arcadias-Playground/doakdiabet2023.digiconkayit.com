@@ -10,10 +10,6 @@
         <ContentTemplate>
             <div class="row clearfix justify-content-center">
                 <div class="col-md-10 mt-1">
-                    <p class="text-center">
-                        <strong>Kırmızı * ile işaretlenmiş tüm alanların doldurulması zorunludur.
-                        </strong>
-                    </p>
                     <fieldset>
                         <legend>Kişisel bilgiler</legend>
                         <table class="KuTechTable">
@@ -69,6 +65,12 @@
                                 <td>Ünvan</td>
                                 <td>
                                     <asp:DropDownList ID="ddlUnvan" runat="server" CssClass="form-control">
+                                        <asp:ListItem Text="Profesör Doktor" Value="Profesör Doktor" />
+                                        <asp:ListItem Text="Doçent Profesör Doktor" Value="Doçent Profesör Doktor" />
+                                        <asp:ListItem Text="Bay" Value="Bay" />
+                                        <asp:ListItem Text="Bayan" Value="Bayan" />
+                                        <asp:ListItem Text="Lisansüstü Öğrenci" Value="Lisansüstü Öğrenci" />
+                                        <asp:ListItem Text="Öğrenci" Value="Öğrenci" />
                                         <asp:ListItem Text="Asistan" Value="Asistan" />
                                     </asp:DropDownList>
                             </tr>
@@ -108,10 +110,6 @@
                                     <a id="lnkKVKKMetni" runat="server" target="_blank" href="files/Kvkk.pdf">KVKK Onayı Veriyorum</a>
                                 </td>
                             </tr>
-
-
-
-
                         </table>
                     </fieldset>
                     <div class="d-flex justify-content-center align-items-center">
@@ -119,10 +117,16 @@
                     </div>
                 </div>
             </div>
+
         </ContentTemplate>
     </asp:UpdatePanel>
-    <%-- <asp:SqlDataSource runat="server" ID="KatilimcListesi" ConnectionString='<%$ ConnectionStrings:doakdiabet2023 %>' ProviderName='<%$ ConnectionStrings:doakdiabet2023.ProviderName %>' SelectCommand="SELECT * FROM [KatilimciTablosu]"></asp:SqlDataSource>--%>
+    <asp:SqlDataSource runat="server" ID="KatilimcListesi" ConnectionString='<%$ ConnectionStrings:doakdiabet2023 %>' ProviderName='<%$ ConnectionStrings:doakdiabet2023.ProviderName %>' SelectCommand="SELECT * FROM [KatilimciTablosu]"></asp:SqlDataSource>
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <script>
+        $(function () {
+            $("#txtDogumTarihi").datepicker();
+        });
+    </script>
 </asp:Content>
