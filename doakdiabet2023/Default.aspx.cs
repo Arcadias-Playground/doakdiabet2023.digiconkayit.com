@@ -22,8 +22,6 @@ namespace doakdiabet2023
         {
             if (!IsPostBack)
             {
-                ddlUnvan.DataBind();
-                ddlUnvan.Items.Insert(0, listItem);
             }
 
         }
@@ -44,7 +42,6 @@ namespace doakdiabet2023
                 // Yeni kayıt oluşturme işlemi
                 KModel = new KatilimciTablosuModel
                 {
-                    KatilimciID = new KatilimciTablosuIslemler().YeniKatilimciID(),
                     AdSoyad = Kontrol.KelimeKontrol(txtAdSoyad, "Lütfen adınızı ve soyadınızı girin.", ref Uyarilar),
                     TCNo = Kontrol.KimlikNoKontrol(txtTCNo, "Lütfen kimlik numaranızı girin.", "Lütfen geçerli bir kimlik numarası girin.", ref Uyarilar),
                     ePosta = Kontrol.ePostaKontrol(txtEmail, "Lütfen e-posta adresinizi girin.", "E-posta adresi türü yanlış girildi.", ref Uyarilar),
@@ -52,21 +49,15 @@ namespace doakdiabet2023
                     SicilNo = Kontrol.KelimeKontrol(txtSicilNo, "Lütfen sicil numaranızı girin.", ref Uyarilar),
                     Branş = Kontrol.KelimeKontrol(txtBranş, "Lütfen branşınızı giriniz.", ref Uyarilar),
                     Meslek = Kontrol.KelimeKontrol(txtMeslek, "Lütfen mesleğinizi giriniz.", ref Uyarilar),
-                    Unvan = new BilgiKontrolMerkezi().KelimeKontrol(ddlUnvan, "Lütfen ünvanınızı seçin veya belirtin.", ref Uyarilar),
+                    Unvan = Kontrol.KelimeKontrol(txtUnvan, "Lütfen ünvanınızı seçin veya belirtin.", ref Uyarilar),
                     Hastane = Kontrol.KelimeKontrol(txtHastane, "Lütfen hangi hastanede çalıştığınızı giriniz.", ref Uyarilar),
                     Sehir = Kontrol.KelimeKontrol(txtSehir, "Lütfen hangi şehirde yaşadığınızı giriniz.", ref Uyarilar),
                     Ilce = Kontrol.KelimeKontrol(txtIlce, "Lütfen İlçe giriniz.", ref Uyarilar),
-                    DogumTarihi = Kontrol.KelimeKontrol(txtDogumTarihi, "Lütfen doğum tarihinizi giriniz.", ref Uyarilar),
-                    //KvkkOnay = Kontrol.BoolKontrol(chkKVKKOnay.Checked.ToString(), "Kvkk seçiminiz geçersiz.", ref Uyarilar),
+                    DogumTarihi = Kontrol.TariheKontrol(txtDogumTarihi, "Lütfen doğum tarihinizi giriniz.", "Lütfen geçerli bir tarih giriniz.", ref Uyarilar),
                     KvkkOnay = chkKVKKOnay.Checked,
                     GuncellenmeTarihi = Kontrol.Simdi(),
                     EklenmeTarihi = Kontrol.Simdi(),
                 };
-
-                //if (!KModel.KvkkOnay)
-                //{
-                //    Uyarilar.Append("<p>Lütfen KvKK metnini onaylayınız.</p>");
-                //}
 
                 if (string.IsNullOrEmpty(Uyarilar.ToString()))
                 {
@@ -80,7 +71,6 @@ namespace doakdiabet2023
                             {
                                 trn.Commit();
                                 BilgiKontrolMerkezi.UyariEkrani(this, $"BasariliBilgilendirme('{KModel.AdSoyad}');", false);
-                                //Response.Redirect($"~/Successful.aspx?KatilimciID={KModel.KatilimciID}");
                                 var mailSender = new MailGonderimIslemler();
                                 mailSender.KayitBilgilendirme(KModel);
                             }

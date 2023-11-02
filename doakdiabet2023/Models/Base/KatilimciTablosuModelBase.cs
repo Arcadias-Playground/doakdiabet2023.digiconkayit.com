@@ -87,7 +87,7 @@ namespace ModelBase
         [Required(ErrorMessage = "BosUyari")]
         [MaxLength(255, ErrorMessage = "UzunlukUyari")]
         [Column("DogumTarihi", Order = 10)]
-        public virtual string DogumTarihi { get; set; }
+        public virtual DateTime DogumTarihi { get; set; }
 
 
         [Required(ErrorMessage = "BosUyari")]

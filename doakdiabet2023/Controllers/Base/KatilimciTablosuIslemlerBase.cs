@@ -30,9 +30,8 @@ namespace VeritabaniIslemMerkeziBase
 
         public virtual SurecBilgiModel YeniKayitEkle(KatilimciTablosuModel YeniKayit)
         {
-            VTIslem.SetCommandText("INSERT INTO KatilimciTablosu (KatilimciID, AdSoyad, TCNo, ePosta, Telefon, SicilNo, Branş, Meslek, Unvan, Hastane, Sehir, Ilce, DogumTarihi, KvkkOnay , GuncellenmeTarihi, EklenmeTarihi) VALUES (@KatilimciID, @AdSoyad, @TCNo, @ePosta, @Telefon, @SicilNo, @Branş, @Meslek, @Unvan, @Hastane, @Sehir, @Ilce,  @DogumTarihi, KvkkOnay , @GuncellenmeTarihi, @EklenmeTarihi)");
+            VTIslem.SetCommandText("INSERT INTO KatilimciTablosu (AdSoyad, TCNo, ePosta, Telefon, SicilNo, Branş, Meslek, Unvan, Hastane, Sehir, Ilce, DogumTarihi, KvkkOnay , GuncellenmeTarihi, EklenmeTarihi) VALUES (@AdSoyad, @TCNo, @ePosta, @Telefon, @SicilNo, @Branş, @Meslek, @Unvan, @Hastane, @Sehir, @Ilce,  @DogumTarihi, KvkkOnay , @GuncellenmeTarihi, @EklenmeTarihi)");
 
-            VTIslem.AddWithValue("KatilimciID", YeniKayit.KatilimciID);
             VTIslem.AddWithValue("AdSoyad", YeniKayit.AdSoyad);
             VTIslem.AddWithValue("TCNo", YeniKayit.TCNo);
             VTIslem.AddWithValue("ePosta", YeniKayit.ePosta);
@@ -193,7 +192,7 @@ namespace VeritabaniIslemMerkeziBase
                         Hastane = SModel.Reader.GetString(9),
                         Sehir = SModel.Reader.GetString(10),
                         Ilce = SModel.Reader.GetString(11),
-                        DogumTarihi = SModel.Reader.GetString(12),
+                        DogumTarihi = SModel.Reader.GetDateTime(12),
                         KvkkOnay = SModel.Reader.GetBoolean(13),
 
                         GuncellenmeTarihi = SModel.Reader.GetDateTime(14),
@@ -255,7 +254,7 @@ namespace VeritabaniIslemMerkeziBase
                         Hastane = Reader.GetString(Baslangic + 9),
                         Sehir = Reader.GetString(Baslangic + 10),
                         Ilce = Reader.GetString(Baslangic + 11),
-                        DogumTarihi = Reader.GetString(Baslangic + 12),
+                        DogumTarihi = Reader.GetDateTime(Baslangic + 12),
                         KvkkOnay = Reader.GetBoolean(Baslangic + 13),
 
                         GuncellenmeTarihi = Reader.GetDateTime(Baslangic + 14),

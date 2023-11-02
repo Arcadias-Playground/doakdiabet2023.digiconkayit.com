@@ -96,13 +96,13 @@ namespace doakdiabet2023
         protected global::System.Web.UI.WebControls.TextBox txtMeslek;
 
         /// <summary>
-        /// ddlUnvan control.
+        /// txtUnvan control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlUnvan;
+        protected global::System.Web.UI.WebControls.TextBox txtUnvan;
 
         /// <summary>
         /// txtHastane control.

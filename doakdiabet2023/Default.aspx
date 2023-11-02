@@ -64,15 +64,7 @@
                                 <td>*</td>
                                 <td>Ünvan</td>
                                 <td>
-                                    <asp:DropDownList ID="ddlUnvan" runat="server" CssClass="form-control">
-                                        <asp:ListItem Text="Profesör Doktor" Value="Profesör Doktor" />
-                                        <asp:ListItem Text="Doçent Profesör Doktor" Value="Doçent Profesör Doktor" />
-                                        <asp:ListItem Text="Bay" Value="Bay" />
-                                        <asp:ListItem Text="Bayan" Value="Bayan" />
-                                        <asp:ListItem Text="Lisansüstü Öğrenci" Value="Lisansüstü Öğrenci" />
-                                        <asp:ListItem Text="Öğrenci" Value="Öğrenci" />
-                                        <asp:ListItem Text="Asistan" Value="Asistan" />
-                                    </asp:DropDownList>
+                                    <asp:TextBox ID="txtUnvan" runat="server" CssClass="form-control" onchange="toUpper(this)" onkeyup="toUpper(this)"></asp:TextBox></td>
                             </tr>
 
                             <tr>
