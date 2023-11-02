@@ -125,11 +125,6 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <script>
-        $(function () {
-            $("#txtDogumTarihi").datepicker();
-        });
-    </script>
-    <script>
         function pageLoad(sender, args) {
             $('#<%= txtTCNo.ClientID%>').inputmask('99999999999', { onincomplete: () => { $('#<%= txtTCNo.ClientID%>').val(''); } });
             $('#<%= txtDogumTarihi.ClientID%>').inputmask('99.99.9999', { onincomplete: () => { $('#<%= txtDogumTarihi.ClientID%>').val(''); } });

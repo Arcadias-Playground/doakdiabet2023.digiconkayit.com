@@ -18,7 +18,7 @@ namespace VeritabaniIslemMerkezi
             {
                 mm.From.Add(new MailboxAddress("5. DOĞU AKDENİZ DİYABET AKADEMİSİ 2023", "doakdiabet2023@digiconkayit.com"));
                 mm.To.Add(new MailboxAddress($"{OModel.AdSoyad}", OModel.ePosta));
-                mm.Bcc.Add(new MailboxAddress("Altay Serhat İnan", "kuzey.dagli@outlook.com"));
+                mm.Bcc.Add(new MailboxAddress("Kadir Çağlar", "kadircaglar@consensustourism.com"));
 
                 mm.Subject = "DOĞU AKDENİZ DİYABET AKADEMİSİ 2023 Başvuru Bilgileriniz";
 

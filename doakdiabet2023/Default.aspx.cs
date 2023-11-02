@@ -24,7 +24,6 @@ namespace doakdiabet2023
             {
                 ddlUnvan.DataBind();
                 ddlUnvan.Items.Insert(0, listItem);
-                txtDogumTarihi.Attributes.Add("type", "date");
             }
 
         }
