@@ -34,19 +34,20 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-    <footer id="footer">
-        <div class="container d-md-flex py-4">
-            <div class="me-md-auto text-center text-md-start">
-                <div class="copyright">
-                    &copy; Copyright <strong><span>5. DOĞU AKDENİZ DİYABET AKADEMİSİ 2023.</span><br>
-                    </strong>. Tüm Hakları Saklıdır.
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-2">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            Copyright © 2023 5. Doğu Akdeniz Diyabet Akademisi. Tüm Hakları Saklıdır.
+                        </div>
+                        <div>
+                            <a href="http://www.arkadyas.com" target="_blank">
+                                <img src="img/arkadyas.png" style="float: right; width: 120px"></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="social-links text-center text-md-right pt-3 pt-md-0">
-                <a href="https://arcadiastech.com/">
-                    <asp:Image ID="ImgFooter" runat="server" ImageUrl="~/img/arkadyas.png" />
-                </a>
-
             </div>
         </div>
     </footer>

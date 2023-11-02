@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using doakdiabet2023.Services;
+using Model;
 using System;
 using System.Data.OleDb;
 using System.Text;
@@ -15,7 +16,6 @@ namespace doakdiabet2023
         BilgiKontrolMerkezi Kontrol = new BilgiKontrolMerkezi();
         SurecBilgiModel SModel;
         KatilimciTablosuModel KModel;
-
         ListItem listItem = new ListItem { Text = "Seçim Yapınız", Value = string.Empty };
 
         protected void Page_Load(object sender, EventArgs e)
@@ -29,26 +29,25 @@ namespace doakdiabet2023
 
         }
 
-        protected void ddlUnvan_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ddlUnvan.SelectedValue.Equals("1") || ddlUnvan.SelectedValue.Equals("2"))
-            {
-                // '1' veya '2' değerine sahip bir seçenek seçildiğinde yapılması gereken işlemler buraya yaz
-
-                Kontrol.Temizle(ddlUnvan);
-                ddlUnvan.Visible = false;
-            }
-        }
-
-
         protected void lnkbtnKayitOl_Click(object sender, EventArgs e)
         {
+            string tcKimlik = txtTCNo.Text; // Kullanıcının girdiği TC kimlik numarası
+
+            KayitOlustur kayitOlustur = new KayitOlustur();
+            if (kayitOlustur.TCKimlikKontrol(tcKimlik))
             {
+                // Bu TC kimlik numarası ile daha önce kayıt olunmuş.
+                BilgiKontrolMerkezi.UyariEkrani(this, "UyariBilgilendirme('Bilgilendirme', 'Bu TC kimlik numarası ile daha önce kayıt olunmuş.', false);", false);
+
+            }
+            else
+            {
+                // Yeni kayıt oluşturme işlemi
                 KModel = new KatilimciTablosuModel
                 {
                     KatilimciID = new KatilimciTablosuIslemler().YeniKatilimciID(),
                     AdSoyad = Kontrol.KelimeKontrol(txtAdSoyad, "Lütfen adınızı ve soyadınızı girin.", ref Uyarilar),
-                    TCNo = string.IsNullOrEmpty(txtTCNo.Text) ? string.Empty : Kontrol.KimlikNoKontrol(txtTCNo, "Lütfen kimlik numaranızı girin.", "Lütfen geçerli bir kimlik numarası girin.", ref Uyarilar),
+                    TCNo = Kontrol.KimlikNoKontrol(txtTCNo, "Lütfen kimlik numaranızı girin.", "Lütfen geçerli bir kimlik numarası girin.", ref Uyarilar),
                     ePosta = Kontrol.ePostaKontrol(txtEmail, "Lütfen e-posta adresinizi girin.", "E-posta adresi türü yanlış girildi.", ref Uyarilar),
                     Telefon = Kontrol.KelimeKontrol(txtTelefon, "Lütfen cep telefonu numaranızı girin.", ref Uyarilar),
                     SicilNo = Kontrol.KelimeKontrol(txtSicilNo, "Lütfen sicil numaranızı girin.", ref Uyarilar),
@@ -59,17 +58,16 @@ namespace doakdiabet2023
                     Sehir = Kontrol.KelimeKontrol(txtSehir, "Lütfen hangi şehirde yaşadığınızı giriniz.", ref Uyarilar),
                     Ilce = Kontrol.KelimeKontrol(txtIlce, "Lütfen İlçe giriniz.", ref Uyarilar),
                     DogumTarihi = Kontrol.KelimeKontrol(txtDogumTarihi, "Lütfen doğum tarihinizi giriniz.", ref Uyarilar),
-                    KvkkOnay = Kontrol.BoolKontrol(chkKVKKOnay.Checked.ToString(), "Kvkk seçiminiz geçersiz.", ref Uyarilar),
-
+                    //KvkkOnay = Kontrol.BoolKontrol(chkKVKKOnay.Checked.ToString(), "Kvkk seçiminiz geçersiz.", ref Uyarilar),
+                    KvkkOnay = chkKVKKOnay.Checked,
                     GuncellenmeTarihi = Kontrol.Simdi(),
                     EklenmeTarihi = Kontrol.Simdi(),
                 };
 
-                if (!KModel.KvkkOnay)
-                {
-                    Uyarilar.Append("<p>Lütfen KvKK metnini onaylayınız.</p>");
-                }
-
+                //if (!KModel.KvkkOnay)
+                //{
+                //    Uyarilar.Append("<p>Lütfen KvKK metnini onaylayınız.</p>");
+                //}
 
                 if (string.IsNullOrEmpty(Uyarilar.ToString()))
                 {

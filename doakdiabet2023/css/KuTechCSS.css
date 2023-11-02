@@ -12,7 +12,7 @@ legend {
     width: 100%;
     color: #b4aca8;
     font-size: 14px;
-    background: black;
+    background: #0d3469;
 }
 
     #footer .footer-top {
@@ -174,7 +174,7 @@ legend {
 
         .KuTechTable td:first-child {
             width: 8px;
-            color: red;
+            color: #bf1e2e;
         }
 
         .KuTechTable td:nth-child(2) {
@@ -182,7 +182,7 @@ legend {
             text-align: center;
             width: 250px;
             border-radius: 3px;
-            background: black;
+            background: #293b8d;
             color: #f9f5f0;
         }
 
@@ -252,4 +252,15 @@ legend {
 
 #ignismyModal .modal-header {
     border: 0px;
+}
+
+
+
+
+footer {
+    background-color: #0d3469;
+    margin-top: 50px;
+    padding: 20px;
+    font-weight: 400;
+    color: #FFFFFF
 }

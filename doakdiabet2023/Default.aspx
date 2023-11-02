@@ -107,7 +107,7 @@
                                 <td class="bg-transparent"></td>
                                 <td>
                                     <asp:CheckBox ID="chkKVKKOnay" runat="server" />
-                                    <a id="lnkKVKKMetni" runat="server" target="_blank" href="files/Kvkk.pdf">KVKK Onayı Veriyorum</a>
+                                    <a id="lnkKVKKMetni" runat="server" target="_blank" href="files/Kvkk.pdf">KVKK okudum ve kabul ediyorum.</a>
                                 </td>
                             </tr>
                         </table>
@@ -128,5 +128,12 @@
         $(function () {
             $("#txtDogumTarihi").datepicker();
         });
+    </script>
+    <script>
+        function pageLoad(sender, args) {
+            $('#<%= txtTCNo.ClientID%>').inputmask('99999999999', { onincomplete: () => { $('#<%= txtTCNo.ClientID%>').val(''); } });
+            $('#<%= txtDogumTarihi.ClientID%>').inputmask('99.99.9999', { onincomplete: () => { $('#<%= txtDogumTarihi.ClientID%>').val(''); } });
+            $('#<%= txtTelefon.ClientID%>').inputmask('(999) 999 99 99', { onincomplete: () => { $('#<%= txtTelefon.ClientID%>').val(''); } });
+        }
     </script>
 </asp:Content>

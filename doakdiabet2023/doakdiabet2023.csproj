@@ -169,6 +169,7 @@
     <Compile Include="Models\KatilimciTablosuModel.cs" />
     <Compile Include="Models\Relation\KatilimciTablosuModelRelation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\KayitOlustur.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Main.Master" />
