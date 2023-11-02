@@ -13,7 +13,12 @@ namespace VeritabaniIslemMerkezi
 		public KatilimciTablosuIslemler(OleDbTransaction tran) : base (tran) { }
 
         
-
+		public bool TCKimlikNoKontrol(string TCKimlikNo)
+		{
+			VTIslem.SetCommandText("SELECT COUNT(*) FROM KatilimciTablosu WHERE TCNo = @tcKimlik");
+			VTIslem.AddWithValue("tcKimlik", TCKimlikNo);
+			return Convert.ToInt32(VTIslem.ExecuteScalar()).Equals(0);
+		}
 
     }
 }

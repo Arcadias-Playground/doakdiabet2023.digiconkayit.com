@@ -59,7 +59,7 @@
       <HintPath>..\packages\MimeKit.4.2.0\lib\net47\MimeKit.dll</HintPath>
     </Reference>
     <Reference Include="Model.Core">
-      <HintPath>..\..\..\..\Desktop\Depo\GüncelDll\Model.Core.dll</HintPath>
+      <HintPath>..\..\..\Altay\TemelIslemler\Model.Core\bin\Release\Model.Core.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -117,10 +117,10 @@
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="VeritabaniIslemMerkezi.Core">
-      <HintPath>..\..\..\..\Desktop\Depo\GüncelDll\VeritabaniIslemMerkezi.Core.dll</HintPath>
+      <HintPath>..\..\..\Altay\TemelIslemler\VeritabaniIslemMerkezi.Core\bin\Release\VeritabaniIslemMerkezi.Core.dll</HintPath>
     </Reference>
     <Reference Include="VeritabaniIslemSaglayici.Core.Access">
-      <HintPath>..\..\..\..\Desktop\Depo\GüncelDll\VeritabaniIslemSaglayici.Core.Access.dll</HintPath>
+      <HintPath>..\..\..\Altay\TemelIslemler\VeritabaniIslemSaglayici.Core.Access\bin\Release\VeritabaniIslemSaglayici.Core.Access.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

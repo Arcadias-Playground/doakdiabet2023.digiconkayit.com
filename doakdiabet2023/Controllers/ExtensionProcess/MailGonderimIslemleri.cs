@@ -37,8 +37,8 @@ namespace VeritabaniIslemMerkezi
                 HtmlContent.Append($"<tr><td style='border: 1px solid #dddddd; padding: 8px;'>Hastane</td><td style='border: 1px solid #dddddd; padding: 8px;'>{OModel.Hastane}</td></tr>");
                 HtmlContent.Append($"<tr><td style='border: 1px solid #dddddd; padding: 8px;'>Şehir</td><td style='border: 1px solid #dddddd; padding: 8px;'>{OModel.Sehir}</td></tr>");
                 HtmlContent.Append($"<tr><td style='border: 1px solid #dddddd; padding: 8px;'>İlçe</td><td style='border: 1px solid #dddddd; padding: 8px;'>{OModel.Ilce}</td></tr>");
-                HtmlContent.Append($"<tr><td style='border: 1px solid #dddddd; padding: 8px;'>Doğum Tarihi</td><td style='border: 1px solid #dddddd; padding: 8px;'>{OModel.DogumTarihi}</td></tr>");
-                HtmlContent.Append($"<tr><td style='border: 1px solid #dddddd; padding: 8px;'>KvKK Onayınız</td><td style='border: 1px solid #dddddd; padding: 8px;'>{OModel.KvkkOnay}</td></tr>");
+                HtmlContent.Append($"<tr><td style='border: 1px solid #dddddd; padding: 8px;'>Doğum Tarihi</td><td style='border: 1px solid #dddddd; padding: 8px;'>{OModel.DogumTarihi:dd.MM.yyyy}</td></tr>");
+                HtmlContent.Append($"<tr><td style='border: 1px solid #dddddd; padding: 8px;'>KvKK Onayınız</td><td style='border: 1px solid #dddddd; padding: 8px;'>{(OModel.KvkkOnay ? "Onaylıyorum" : "Onaylamıyorum")}</td></tr>");
                 HtmlContent.Append($"</table>");
 
                 // İleti metni daha düzenli ve bilgilerin daha kolay okunabilir olduğu bir yapıya getirildi
