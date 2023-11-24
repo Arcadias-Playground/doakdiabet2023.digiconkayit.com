@@ -88,7 +88,7 @@
                                     <asp:TextBox ID="txtIlce" runat="server" CssClass="form-control" onchange="toUpper(this)" onkeyup="toUpper(this)"></asp:TextBox></td>
                             </tr>
 
-                            <tr>
+                            <tr id="tr_DogumTarihi" runat="server" visible="false">
                                 <td>*</td>
                                 <td>Doğum Tarihi</td>
                                 <td>

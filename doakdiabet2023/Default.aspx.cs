@@ -41,7 +41,7 @@ namespace doakdiabet2023
                 Hastane = Kontrol.KelimeKontrol(txtHastane, "Lütfen hangi hastanede çalıştığınızı giriniz.", ref Uyarilar),
                 Sehir = Kontrol.KelimeKontrol(txtSehir, "Lütfen hangi şehirde yaşadığınızı giriniz.", ref Uyarilar),
                 Ilce = Kontrol.KelimeKontrol(txtIlce, "Lütfen İlçe giriniz.", ref Uyarilar),
-                DogumTarihi = Kontrol.TariheKontrol(txtDogumTarihi, "Lütfen doğum tarihinizi giriniz.", "Lütfen geçerli bir tarih giriniz.", ref Uyarilar),
+                DogumTarihi = Kontrol.Simdi() /*Kontrol.TariheKontrol(txtDogumTarihi, "Lütfen doğum tarihinizi giriniz.", "Lütfen geçerli bir tarih giriniz.", ref Uyarilar)*/,
                 KvkkOnay = chkKVKKOnay.Checked,
                 GuncellenmeTarihi = Kontrol.Simdi(),
                 EklenmeTarihi = Kontrol.Simdi(),
