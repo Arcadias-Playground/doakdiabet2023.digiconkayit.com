@@ -1,5 +1,6 @@
 ﻿using doakdiabet2023.Services;
 using Model;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
 using System.Data.OleDb;
 using System.Text;
@@ -34,7 +35,7 @@ namespace doakdiabet2023
                 TCNo = Kontrol.KimlikNoKontrol(txtTCNo, "Lütfen kimlik numaranızı girin.", "Lütfen geçerli bir kimlik numarası girin.", ref Uyarilar),
                 ePosta = Kontrol.ePostaKontrol(txtEmail, "Lütfen e-posta adresinizi girin.", "E-posta adresi türü yanlış girildi.", ref Uyarilar),
                 Telefon = Kontrol.KelimeKontrol(txtTelefon, "Lütfen cep telefonu numaranızı girin.", ref Uyarilar),
-                SicilNo = Kontrol.KelimeKontrol(txtSicilNo, "Lütfen sicil numaranızı girin.", ref Uyarilar),
+                SicilNo = ".", /*Kontrol.KelimeKontrol(txtSicilNo, "Lütfen sicil numaranızı girin.", ref Uyarilar),*/
                 Branş = Kontrol.KelimeKontrol(txtBranş, "Lütfen branşınızı giriniz.", ref Uyarilar),
                 Meslek = Kontrol.KelimeKontrol(txtMeslek, "Lütfen mesleğinizi giriniz.", ref Uyarilar),
                 Unvan = Kontrol.KelimeKontrol(txtUnvan, "Lütfen ünvanınızı seçin veya belirtin.", ref Uyarilar),

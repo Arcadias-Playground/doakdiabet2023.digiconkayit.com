@@ -39,7 +39,7 @@
                                     <asp:TextBox ID="txtTelefon" runat="server" CssClass="form-control"></asp:TextBox></td>
                             </tr>
 
-                            <tr>
+                            <tr id="tr_SicilNo" runat="server" visible="false">
                                 <td>*</td>
                                 <td>Sicil Numarası</td>
                                 <td>

@@ -69,6 +69,15 @@ namespace doakdiabet2023
         protected global::System.Web.UI.WebControls.TextBox txtTelefon;
 
         /// <summary>
+        /// tr_SicilNo denetimi.
+        /// </summary>
+        /// <remarks>
+        /// Otomatik olarak oluşturulan alan.
+        /// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow tr_SicilNo;
+
+        /// <summary>
         /// txtSicilNo denetimi.
         /// </summary>
         /// <remarks>
